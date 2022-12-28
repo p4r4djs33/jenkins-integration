@@ -6,7 +6,7 @@ services:
     restart: always
     build: .
     ports:
-      - 8080:8080
+      - 8085:8085
     environment:
       MYSQL_HOST: mysqldb
       MYSQL_USER: root
