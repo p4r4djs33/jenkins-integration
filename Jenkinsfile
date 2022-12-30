@@ -5,14 +5,15 @@ pipeline {
     }
     stages {
         stage('Clone') {
-            git 'https://github.com/p4r4djs33/jenkins-integration.git'
+            steps {
+                git 'https://github.com/p4r4djs33/jenkins-integration.git'
+            }
         }
         stage('Build Maven') {
             steps {
                 sh 'mvn clean install -DskipTests'
             }
         }
-
         stage('Build Docker Image') {
             steps {
                 script {
