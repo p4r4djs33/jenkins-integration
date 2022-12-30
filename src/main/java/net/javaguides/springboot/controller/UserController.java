@@ -30,6 +30,7 @@ public class UserController {
     @GetMapping("{id}")
     public ResponseEntity<User> getUserById(@PathVariable("id") Long userId){
         log.info("get");
+        log.info("get");
         User user = userService.getUserById(userId);
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
