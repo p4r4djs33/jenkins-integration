@@ -19,7 +19,7 @@ pipeline {
                     def props = readProperties file: 'env-vars.properties'
                     env.Git = props.Git
                 }
-                git "$Git"
+                git 'https://github.com/p4r4djs33/jenkins-integration.git'
             }
         }
         stage('Build Maven') {
