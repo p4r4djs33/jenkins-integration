@@ -5,11 +5,13 @@ pipeline {
     }
     stages {
         stage('Get environment variables from properties file') {
-            script{
-                def props = readProperties file: 'env-vars.properties'
-                env.Git = props.Git
+            steps {
+                script{
+                    def props = readProperties file: 'env-vars.properties'
+                    env.Git = props.Git
+                }
+                echo "The git link is $Git"
             }
-            echo "The git link is $Git"
         }
         stage('Clone') {
             steps {
