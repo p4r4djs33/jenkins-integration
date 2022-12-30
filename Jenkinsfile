@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Clone') {
             steps {
-                git 'https://github.com/p4r4djs33/jenkins-integration.git'
+                git $Git
             }
         }
         stage('Build Maven') {
