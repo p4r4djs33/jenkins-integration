@@ -34,5 +34,16 @@ pipeline {
                 }
             }
         }
+        stage('Push image to hub') {
+            steps {
+                script {
+                    withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
+                        // some block
+                        sh 'docker login -u p4r4djs333 -p ${dockerhubpwd}'
+                    }
+                    sh 'docker push springboot-docker-part2'
+                }
+            }
+        }
     }
 }
