@@ -19,7 +19,7 @@ pipeline {
                     def props = readProperties file: 'env-vars.properties'
                     env.Git = props.Git
                 }
-                git "$env.Git"
+                git ${env.Git}
             }
         }
         stage('Build Maven') {
