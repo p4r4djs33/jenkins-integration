@@ -30,7 +30,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh 'docker build -t springboot-docker-part2 .'
+                    sh 'docker build -t p4r4djs333/springboot-docker-part2 .'
                 }
             }
         }
